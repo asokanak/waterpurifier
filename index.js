@@ -47,7 +47,7 @@ app.post('/contact', (req, res) => {
 })
 
 app.get('/', function(req, res){
-    res.send(fs.readFileSync('index.html', 'utf8'));
+    res.send(fs.readFileSync('./web/index.html', 'utf8'));
 
 });
 
