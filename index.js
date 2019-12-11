@@ -8,11 +8,23 @@ const bodyparser = require('body-parser')
 const index = fs.readFileSync('index.html');
 
 // Mail sending via nodemailer package
+// Rending static files
 app.use(bodyparser.urlencoded({ extended: true }));
+app.use(express.static('css'));
+app.use(express.static('img'));
+app.use(express.static('js'));
+app.use(express.static('lib'));
+app.use(express.static('contactform'));
+
 // POST route from contact form
 app.post('/contact', (req, res) => {
     console.log('Into Contact api request');
-    console.log('Request Body - ', req.body);
+    console.log('Request Body - ', req.body.name[0]);
+    console.log('Request Body - ', req.body.name[1]);
+    console.log('Request Body - ', req.body.gender);
+    console.log('Request Body - ', req.body.email);
+    console.log('Request Body - ', req.body.product[0]);
+    console.log('Request Body - ', req.body.message);
 
     // Instantiate the SMTP server
     const smtpTrans = nodemailer.createTransport({
@@ -47,7 +59,7 @@ app.post('/contact', (req, res) => {
 })
 
 app.get('/', function(req, res){
-    res.send(fs.readFileSync('./web/index.html', 'utf8'));
+    res.send(fs.readFileSync('index.html', 'utf8'));
 
 });
 
