@@ -10,22 +10,16 @@ const index = fs.readFileSync('index.html');
 // Mail sending via nodemailer package
 // Rending static files
 app.use(bodyparser.urlencoded({ extended: true }));
-app.use(express.static('css'));
-app.use(express.static('img'));
-app.use(express.static('js'));
-app.use(express.static('lib'));
-app.use(express.static('contactform'));
+app.use(express.static('public'));
+app.use('/css', express.static(__dirname + '/public/css'));
+app.use('/js', express.static(__dirname + '/public/js'));
+app.use('/images', express.static(__dirname + '/public/images'));
+app.use('/contactform', express.static(__dirname + '/public/contactform'));
+app.use('/lib', express.static(__dirname + '/public/lib'));
+// app.use('/index', express.static(__dirname + '/public/index'));
 
 // POST route from contact form
 app.post('/contact', (req, res) => {
-    console.log('Into Contact api request');
-    console.log('Request Body - ', req.body.name[0]);
-    console.log('Request Body - ', req.body.name[1]);
-    console.log('Request Body - ', req.body.gender);
-    console.log('Request Body - ', req.body.email);
-    console.log('Request Body - ', req.body.product[0]);
-    console.log('Request Body - ', req.body.message);
-
     // Instantiate the SMTP server
     const smtpTrans = nodemailer.createTransport({
         host: 'smtp.gmail.com',
@@ -41,7 +35,13 @@ app.post('/contact', (req, res) => {
         from: 'testwpproj@gmail.com', // This is ignored by Gmail
         to: 'testwpproj@gmail.com',
         subject: 'New message from contact form at Rauwela.com',
-        text: `${req.body.name} (${req.body.email}) says: ${req.body.message}`
+        html: '<b>Name: </b>' + `${req.body.name}` + '<br>' +  
+        '<b>Gender: </b>' + `${req.body.gender}` + '<br>' +
+        '<b>Phone: </b>' + `${req.body.phone}` + '<br>' +
+        '<b>Email: </b>' + `${req.body.email}` + '<br>' +
+        '<b>Product: </b>' + `${req.body.product}` + '<br>' +
+        '<b>Timing: </b>' + `${req.body.timing}` + '<br>' +
+        '<b>Message: </b>' + `${req.body.message}`
     }
 
     // Attempt to send the email
@@ -68,8 +68,3 @@ app.get('/', function(req, res){
 app.listen(process.env.PORT || 7000, function() {
     console.log("LISTENING!");
 });
-/*http.createServer(function (req, res) {
-    res.writeHead(200, { 'Content-Type': 'text/html' });
-    res.end(index);
-    console.log('Hello Node Server Started');
-}).listen(7000);*/
