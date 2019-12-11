@@ -205,3 +205,6 @@
 
 })(jQuery);
 
+function clearvalues(){  
+  window.location.reload();
+}
