@@ -33,7 +33,7 @@ app.post('/contact', (req, res) => {
     // Specify what the email will look like
     const mailOpts = {
         from: 'testwpproj@gmail.com', // This is ignored by Gmail
-        to: 'testwpproj@gmail.com',
+        to: 'rauwela@gmail.com',
         subject: 'New message from contact form at Rauwela.com',
         html: '<b>Name: </b>' + `${req.body.name}` + '<br>' +  
         '<b>Gender: </b>' + `${req.body.gender}` + '<br>' +
