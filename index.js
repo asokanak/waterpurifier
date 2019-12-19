@@ -59,6 +59,40 @@ app.post('/contact', (req, res) => {
     })
 })
 
+// CTA mail sending
+app.post('/ctaform', (req, res) => {
+    // Instantiate the SMTP server
+    const smtpTrans = nodemailer.createTransport({
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true,
+        auth: {
+            user: 'testwpproj@gmail.com',
+            pass: '77Psalms77'
+        }
+    })
+    // Specify what the email will look like
+    const mailOpts = {
+        from: 'testwpproj@gmail.com', // This is ignored by Gmail
+        to: 'testwpproj@gmail.com',
+        subject: 'New message from contact form at Rauwela.com',
+        html: '<b>Mail Id: </b>' + `${req.body.yourmailid}` + '<br>' +  
+        '<b>Message: </b>' + `${req.body.message}`
+    }
+
+    // Attempt to send the email
+    smtpTrans.sendMail(mailOpts, (error, response) => {
+        console.log('Into Mail sending block CTA');
+        if (error) {
+            console.log('Mail is not sent Error CTA');
+            // res.render('contact-failure') // Show a page indicating failure
+        }
+        else {
+            console.log('Mail is sent Successfully CTA');
+            // res.render('contact-success') // Show a page indicating success
+        }
+    })
+})
 app.get('/', function(req, res){
     res.send(fs.readFileSync('index.html', 'utf8'));
 
