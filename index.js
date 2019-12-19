@@ -36,7 +36,8 @@ app.post('/contact', (req, res) => {
         to: 'rauwela@gmail.com',
         subject: 'New message from contact form at Rauwela.com',
         html: '<b>Name: </b>' + `${req.body.name}` + '<br>' +  
-        '<b>Gender: </b>' + `${req.body.gender}` + '<br>' +
+        '<b>Land Mark: </b>' + `${req.body.landmark}` + '<br>' +
+        '<b>Address: </b>' + `${req.body.address}` + '<br>' +
         '<b>Phone: </b>' + `${req.body.phone}` + '<br>' +
         '<b>Email: </b>' + `${req.body.email}` + '<br>' +
         '<b>Product: </b>' + `${req.body.product}` + '<br>' +
