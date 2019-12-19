@@ -1588,11 +1588,35 @@ body.mobile-nav-active #mobile-nav-toggle {
   }
 }
 
-@media only screen and (max-device-width: 480px) {
- 
-    /* STYLES HERE for DEVICES with physical max-screen width of 480px */
-  #intro .carousel-content {
-    text-align: center;
-    margin-top: 50px;
+
+#enquiry {
+  height: 0px;
+  width: 85px;
+  position: fixed;
+  right: 0;
+  top: 50%;
+  z-index: 1000;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 }
+#enquiry a {
+  display: block;
+  background:#FEBF0F;
+  height: 52px;
+  padding-top: 10px;
+  width: 155px;
+  text-align: center;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+  text-decoration: none;
+  border-color: #000;
 }
+#enquiry a:hover {
+  background:#17431F;
+/*---------------------------------------------------------------------------------------*/
+
