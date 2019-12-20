@@ -76,8 +76,9 @@ app.post('/ctaform', (req, res) => {
         from: 'testwpproj@gmail.com', // This is ignored by Gmail
         to: 'testwpproj@gmail.com',
         subject: 'New message from contact form at Rauwela.com',
-        html: '<b>Mail Id: </b>' + `${req.body.yourmailid}` + '<br>' +  
-        '<b>Message: </b>' + `${req.body.message}`
+        html: '<b>Mail Id: </b>' + `${req.body.frommailid}` + '<br>' +  
+        '<b>Subject: </b>' + `${req.body.subject}` + '<br>' +  
+        '<b>Message: </b>' + `${req.body.messagetext}`
     }
 
     // Attempt to send the email

@@ -431,23 +431,27 @@
               </button>
             </div>
             <div class="modal-body">
-              <form action="/ctaform" method="post" role="form" class="ctaform">
+              <form role="form" class="ctaform">
                 <div class="form-group">
-                  <label for="your-mailid" class="col-form-label">Your Mail Id:</label>
-                  <input type="text" class="form-control" id="your-mailid" name="yourmailid">
-                </div>
-                <div class="form-group">
-                  <label for="our-mailid" class="col-form-label" disabled>Our Mail Id:</label>
-                  <input type="text" class="form-control" id="our-mailid" name="ourmailid"
+                  <label for="to-mailid" class="col-form-label" disabled>To:</label>
+                  <input type="email" class="form-control" id="tomailid" name="tomailid"
                     placeholder="rauwela@gmail.com" disabled>
                 </div>
                 <div class="form-group">
+                  <label for="from-mailid" class="col-form-label">From:</label>
+                  <input type="email" class="form-control" id="frommailid" name="frommailid">
+                </div>                
+                <div class="form-group">
+                  <label for="subject" class="col-form-label">Subject:</label>
+                  <input type="text" class="form-control" id="subject" name="subject">
+                </div>   
+                <div class="form-group">
                   <label for="message-text" class="col-form-label">Message:</label>
-                  <textarea class="form-control" id="message-text" name="message"></textarea>
+                  <textarea class="form-control" id="messagetext" name="message"></textarea>
                 </div>
                 <div class="form-group">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary" data-dismiss="modal">Send message</button>
+                  <button type="button" class="btn btn-success" data-dismiss="modal" id="submbutton" onclick="sendMailcta()">Send message</button>
                 </div>
               </form>
             </div>

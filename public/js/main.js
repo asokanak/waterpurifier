@@ -203,8 +203,54 @@
     items: 1
   });
 
+  // Closing the Demo Modal
+ /* $("#submbutton").submit(function() {
+    console.log('Hello');
+    $('#exampleModal').modal('hide');
+    return false;
+});*/
+
+/*$('button#submbutton').on("click", function(event) {
+  // submit form via ajax, then
+
+  event.preventDefault();
+  $('#exampleModal').modal( 'hide' );
+});*/
+
 })(jQuery);
 
 function clearvalues(){  
+  window.location.reload();
+}
+
+function sendMailcta(){
+  //get the input value
+
+  $frommailid = $('#frommailid').val();
+  $subject = $('#subject').val();
+  $messagetext = $('#messagetext').val();
+  $.ajax({
+      //the url to send the data to
+      url: "/ctaform",
+      //the data to send to
+      data: {frommailid : $frommailid,
+        subject: $subject,
+        messagetext: $messagetext},
+      //type. for eg: GET, POST
+      type: "POST",
+      //datatype expected to get in reply form server
+      dataType: "json",
+      //on success
+      success: function(data){
+          //do something after something is recieved from php
+          console.log('Done');
+          
+      },
+      //on error
+      error: function(){
+          //bad request
+          console.log('Not Done');
+      }
+  });
   window.location.reload();
 }
