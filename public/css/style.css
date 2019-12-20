@@ -643,6 +643,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   line-height: 24px;
   color: #fff;
   margin-bottom: 0;
+  text-align: justify;
 }
 
 /* About Us Section
@@ -1058,7 +1059,9 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-size: 14px;
   text-transform: uppercase;
 }
+.desc_text{
 
+}
 /* Clients Section
 --------------------------------*/
 
@@ -1618,5 +1621,12 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 #enquiry a:hover {
   background:#17431F;
+}
 /*---------------------------------------------------------------------------------------*/
 
+#airfilter_content {
+  margin-top: 100px;
+}
+#airfilter_content p {
+  text-align: justify;
+}
