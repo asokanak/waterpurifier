@@ -74,7 +74,7 @@ app.post('/ctaform', (req, res) => {
     // Specify what the email will look like
     const mailOpts = {
         from: 'testwpproj@gmail.com', // This is ignored by Gmail
-        to: 'testwpproj@gmail.com',
+        to: 'getelectrified@gmail.com',
         subject: 'New message from contact form at Rauwela.com',
         html: '<b>Mail Id: </b>' + `${req.body.frommailid}` + '<br>' +  
         '<b>Subject: </b>' + `${req.body.subject}` + '<br>' +  

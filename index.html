@@ -416,11 +416,9 @@
       <div class="container text-center">
         <h3>We ensure customer satisfaction in terms of product and service.</h3>
         <!-- <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
-        <a class="cta-btn" href="#" data-toggle="modal" data-target="#exampleModal"
-          data-whatever="rauwela@gmail.com">Contact us for demo</a>
+        <a class="cta-btn" href="#contact" >Contact us for demo</a>
       </div>
-      <!--<button type="button" class="btn btn-primary" >Contact us for demo</button>-->
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <!--   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -455,14 +453,11 @@
                 </div>
               </form>
             </div>
-            <!-- <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary" data-dismiss="modal">Send message</button>
-            </div> -->
           </div>
         </div>
-      </div>
-    </section><!-- #call-to-action -->
+      </div> -->
+    </section>
+    <!-- #call-to-action -->
 
     <!--==========================
       Skills Section
@@ -803,9 +798,54 @@
       </div>
     </section> -->
     <!-- #team -->
-    <div id="enquiry">
-      <a href="#popup1">ENQUIRY</a>
+    <div>
+      <div id="enquiry">
+      <a class="cta-btn" href="#" data-toggle="modal" data-target="#exampleModal"
+          data-whatever="info@ruwela.com">ENQUIRY</a>
     </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Dealership Enquiry</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form role="form" class="ctaform">
+                <div class="form-group">
+                  <label for="to-mailid" class="col-form-label" disabled>To:</label>
+                  <input type="email" class="form-control" id="tomailid" name="tomailid"
+                    placeholder="info@rauwela.com" disabled>
+                </div>
+                <div class="form-group">
+                  <label for="from-mailid" class="col-form-label">From:</label>
+                  <input type="email" class="form-control" id="frommailid" name="frommailid">
+                </div>                
+                <div class="form-group">
+                  <label for="subject" class="col-form-label">Subject:</label>
+                  <input type="text" class="form-control" id="subject" name="subject">
+                </div>   
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label">Message:</label>
+                  <textarea class="form-control" id="messagetext" name="message"></textarea>
+                </div>
+                <div class="form-group">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-success" data-dismiss="modal" id="submbutton" onclick="sendMailcta()">Send message</button>
+                </div>
+              </form>
+            </div>
+            <!-- <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" data-dismiss="modal">Send message</button>
+            </div> -->
+          </div>
+        </div>
+    </div>
+  </div>
     
 
     <!--==========================
