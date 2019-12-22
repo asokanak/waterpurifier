@@ -742,7 +742,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   padding: 0 20px 20px 20px;
 }
 .about-col p{
-  text-align: center;
+  text-align: left;
 }
 /* Services Section
 --------------------------------*/
@@ -769,7 +769,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #services .title {
-  margin-left: 60px;
+  /*margin-left: 60px;*/
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 18px;
@@ -789,7 +789,12 @@ body.mobile-nav-active #mobile-nav-toggle {
   line-height: 24px;
   margin-bottom: 0;
 }
-
+.title{
+  text-align: left;
+}
+#services .title{
+  text-align: center;
+}
 /* Call To Action Section
 --------------------------------*/
 
@@ -1397,6 +1402,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin-bottom: 0;
   font-family: "Montserrat", sans-serif;
   color: #eee;
+  text-align: justify;
 }
 
 #footer .footer-top .social-links a {
@@ -1593,7 +1599,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 
 #enquiry {
-  height: 0px;
+  height: 40px;
   width: 85px;
   position: fixed;
   right: 0;
@@ -1608,7 +1614,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 #enquiry a {
   display: block;
   background:#FEBF0F;
-  height: 52px;
+  height: 70px;
   padding-top: 10px;
   width: 155px;
   text-align: center;
